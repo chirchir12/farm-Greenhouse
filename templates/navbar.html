@@ -1,0 +1,55 @@
+{% url 'product-list' as product_list_url %}
+{% url 'index' as home_url %}
+{% url 'posts' as posts_url %}
+
+{% load static %}
+<nav class="navbar navbar-expand-md fintouch-navbar sticky-top">
+    <a class="navbar-brand d-block d-md-none" href="#">
+        <img src="{% static 'images/logo.jpg' %}" alt="" width="190" height="50">
+    </a>
+    <button class="navbar-toggler d-block d-md-none" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav justify-content-around">
+            <li class="nav-item {% if request.path == home_url %} active {% endif %}">
+                <a class="nav-link" href="{{home_url}}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown {% if request.path == category.get_absolute_url %} active {% endif %}">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Services/Products
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                    {% for category in categories %}
+                    <a class="dropdown-item" href="{{category.get_absolute_url}}">{{category.title}}</a>
+                        
+                    {% endfor %}
+                        
+                   
+                    <!-- <a class="dropdown-item" href="#">Greenhouses</a>
+                    <a class="dropdown-item" href="#">Water Pumps</a>
+                    <a class="dropdown-item" href="#">Agriculture Nets</a>
+                    <a class="dropdown-item" href="#">Dam and Pond Lining</a> -->
+
+                </ul>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Projects</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item {% if request.path == posts_url %} active {% endif %}">
+                <a class="nav-link" href="{{posts_url}}">News</a>
+            </li>
+        </ul>
+    </div>
+</nav>

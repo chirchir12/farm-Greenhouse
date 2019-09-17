@@ -1,0 +1,39 @@
+{% extends 'pages/services-base.html' %}
+
+{% block services %}
+
+
+<div class="card mb-3 ml-3 mt-3 product-detail-card">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{object.image.url}}" class="card-img" alt="{{object.title}}">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{object.title}}</h5>
+          <p class="card-text">{{object.description}}</p>
+         
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3 mb-4">
+      <div class="col-10 mx-auto">
+          <div class="card">
+          <div class="card-header text-center contact-us-form">
+              Contact us
+            </div>
+        <div class="card-body">
+          <form action="" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="Send" class="btn btn-block btn-success mt-3">
+          </form>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock services %}

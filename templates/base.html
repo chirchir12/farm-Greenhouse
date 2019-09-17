@@ -1,0 +1,42 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- css -->
+  {% include './base/head.html' %}
+  <title>Finetouch</title>
+</head>
+
+<body>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0&appId=341588476412699&autoLogAppEvents=1"></script>
+  <div class="container-fluid">
+
+    <!-- logo and contact -->
+    <div class="logo-contact d-none d-md-block">{% include 'logo-contact.html' %}</div>
+    <!-- navbar -->
+    {% include 'navbar.html' %}
+
+    <!-- content area -->
+    <main>
+      <!-- welcome image  carousel-->
+
+        {% include 'carousel.html' %}
+     
+      <!-- end of carousel -->
+      
+      {% block content %}{% endblock content %}
+    </main>
+
+    <!-- footer area -->
+    {% include 'footer.html' %}
+  </div>
+
+    <!-- js -->
+    {% include './base/foot.html' %}
+ 
+</body>
+
+</html>

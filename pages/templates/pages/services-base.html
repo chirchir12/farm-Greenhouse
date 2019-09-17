@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section id="product-list-section">
+    <div class="row">
+        <!-- left navigation -->
+        <div class="col-12 col-md-3">
+
+            <!-- search title -->
+            <!-- <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="list-title">Search</h1>
+
+                    </div>
+                </div> -->
+            <!-- end of search title -->
+            <!-- search input field -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="input-group md-form form-sm form-2 pl-0">
+                        <input class="form-control my-0 py-1 red-green" type="search" placeholder="Search product"
+                            aria-label="Search">
+                        <div class="input-group-append">
+                            <button type="submit" class="input-group-text search-button-green"><i
+                                    class="fas fa-search text-white" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of search  -->
+
+            <!-- category section -->
+            <div class="row pt-4">
+                <div class="col-12 d-none d-sm-none d-md-block">
+                    <div class="card">
+                        <div class="card-header text-center product-category-title">Product Category</div>
+                        <ul class="list-group list-group-flush text-center product-category-list">
+
+                            {% for category in categories %}
+                            <li class="list-group-item"><a href="{{category.get_absolute_url}}">{{category.title}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end of category section -->
+        </div>
+
+
+
+
+        <div class="col-12 col-md-9">
+            <!-- <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="list-title">Main Products</h1>
+                    </div>
+                </div> -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb product-list-nav">
+                            <li class="breadcrumb-item">
+                                
+                                {% if category_instance.title or product.title %}
+                                Products
+                                {% else %}
+                                News
+                                {% endif %}
+                                    
+                                
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">  
+                                
+                                {% if category_instance.title  %}
+                                {{category_instance.title}}
+                                {% elif post.title %}
+                                {{post.title}}
+                                {% else %}
+                                {{product.title}}
+                                {% endif %}
+                                    
+                                </li>
+                        </ol>
+                    </nav>
+
+                </div>
+            </div>
+            <div class="row product-container">
+                {% block services %}
+
+                {% endblock services %}
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+{% endblock content %}

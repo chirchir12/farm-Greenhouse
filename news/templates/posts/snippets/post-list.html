@@ -1,0 +1,18 @@
+<div class="card mb-3 post-card">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{{post.image.url}}" class="card-img img-fluid p-2" alt="{{post.title}}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><a href="{{post.get_absolute_url}}">{{post.title|title}}</a></h5>
+              <p class="text-muted"><small><i class="far fa-clock"></i>  {{post.created|date}}</small></p>
+              <p class="card-text text-muted">{{post.content|truncatewords:20|linebreaks}}</p>
+              <div class="post-button">
+                <a  href="{{post.get_absolute_url}}" class="btn"> Read More...</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>

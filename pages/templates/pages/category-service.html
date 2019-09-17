@@ -1,0 +1,19 @@
+{% extends 'pages/services-base.html' %}
+
+{% block services %}
+
+{% for product in products %}
+    <div class="col-12 col-sm-4 col-md-3 p-3">
+        <div class="card product-card-style " style="width: 210px;height: 296px;">
+            <img src="{{product.image.url}}" class="card-img-top pt-1 pl-1 pr-1" alt="...">
+            <div class="card-body">
+                <h5 class="card-title text-center"><a href="{% url 'product-detail' slug=product.slug %}">{{product.title|title|truncatewords:3}}</a></h5>
+                <p class="card-text">{{product.description|truncatechars:60}}</p>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+
+
+{% endblock services %}

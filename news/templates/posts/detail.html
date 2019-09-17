@@ -1,0 +1,16 @@
+{% extends 'pages/services-base.html' %}
+
+{% block services %}
+
+<div class="col-12">
+    
+        <div class="row">
+            <div class="col-12">
+                    {% include 'posts/snippets/post-detail.html' with post=object %}
+            </div>
+        </div>
+        
+</div>
+
+
+{% endblock services %}
