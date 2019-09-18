@@ -2,11 +2,14 @@ from django.db import models
 from django.urls import reverse
 from django.db.models.signals import pre_save
 from config.utils import unique_slug_generator, upload_image_path_posts
+from ckeditor_uploader.fields import RichTextUploadingField
+
+
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, blank=True, null=True)
-    content = models.TextField()
+    content =RichTextUploadingField(null=True, blank=True)
     image   = models.ImageField(blank=True, upload_to=upload_image_path_posts, null=True)
     created = models.DateTimeField(auto_now_add=True)
 

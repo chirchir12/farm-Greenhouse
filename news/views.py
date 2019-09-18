@@ -13,6 +13,7 @@ class POSTListView(ListView):
         context = super(POSTListView, self).get_context_data(**kwargs)
         categories = Category.objects.all()
         context['categories'] = categories
+        context['post'] = True
         return context
     
 
