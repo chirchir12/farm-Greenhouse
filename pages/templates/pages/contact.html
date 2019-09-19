@@ -1,0 +1,113 @@
+{% extends 'pages/services-base.html' %}
+
+{% block services %}
+
+<div class="col-12 about-page-container contact-container">
+    <!-- title -->
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-10 mx-auto">
+            <h3 class="about-page-title text-center">Contact</h3>
+            <div class="underliner"></div>
+        </div>
+    </div>
+    <!-- locations -->
+    <div class="row py-4">
+        <div class="col-12 col-sm-6 col-md-6 mx-auto">
+            <h5 class="location"><i class="fas fa-map-marker-alt"></i> Ongata Rongai Office (Head Office)</h5>
+            <p class="location-description">Ongata Rongai, Magadi Road, Finetouch Irrigation Center, Near Uchumi Masai
+                Mall, Next to Joliday Nursery
+                School</p>
+            <ul class="contact-information">
+                <li> Tel: +254-202 354957</li>
+                <li> +254-700 169962</li>
+                <li> +254-775 881092</li>
+                <li>P.O.Box: 21874 - 00100, Nairobi</li>
+                <li> finetouch@finetouch.co.ke</li>
+            </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 mx-auto">
+            <h5 class="location"><i class="fas fa-map-marker-alt"></i> Nairobi CBD Office</h5>
+            <p class="location-description">Hailleselassie Avenue, Baraka House, next to Kenya Farmers Association
+                (KFA).</p>
+            <ul class="contact-information">
+                <li>Tel: +254-202 354957</li>
+                <li>+254-700 169962</li>
+                <li>+254-775 881092</li>
+                <li>P.O.Box: 21874 - 00100, Nairobi</li>
+                <li>finetouch@finetouch.co.ke</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="row mt-3 mb-5">
+        <div class="col-12 col-sm-6 col-md-4 mx-auto">
+            <h5 class="location"><i class="fas fa-map-marker-alt"></i> Eldoret Office</h5>
+            <p class="location-description">Eldoret- Nakuru Road, next to Adventist Guest House.</p>
+            <ul class="contact-information">
+                <li>Tel: +254-202 354957</li>
+                <li>+254-700 169962</li>
+                <li>+254-775 881092</li>
+                <li>P.O.Box: 21874 - 00100, Nairobi</li>
+                <li>finetouch@finetouch.co.ke</li>
+            </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 mx-auto">
+            <h5 class="location"><i class="fas fa-map-marker-alt"></i> Kitale Office</h5>
+            <p class="location-description">Opposite Show Ground junction, Eldoret - Kitale Road.</p>
+            <ul class="contact-information">
+                <li>Tel: +254-202 354957</li>
+                <li>+254-700 169962</li>
+                <li>+254-775 881092</li>
+                <li>P.O.Box: 21874 - 00100, Nairobi</li>
+                <li>finetouch@finetouch.co.ke</li>
+            </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 mx-auto">
+            <h5 class="location"><i class="fas fa-map-marker-alt"></i> Kisumu Office</h5>
+            <p class="location-description">Kisumu - Nairobi Rd, Nyamasaria Area, next to Butter Toast Bakery.</p>
+            <ul class="contact-information">
+                <li>Tel: +254-202 354957</li>
+                <li>+254-700 169962</li>
+                <li>+254-775 881092</li>
+                <li>P.O.Box: 21874 - 00100, Nairobi</li>
+                <li>finetouch@finetouch.co.ke</li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- map -->
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-12 mx-auto">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1Lfhvmm7hdywZNDEpsZb-6En5uB20W_mP&hl=en" width="100%"
+                height="350"></iframe>
+        </div>
+    </div>
+    <!-- get in touch -->
+    <div class="row mt-5">
+        <div class="col-12 col-sm-6 col-md-10 mx-auto">
+            <h3 class="about-page-title text-center">Get in Touch</h3>
+            <div class="underliner"></div>
+            <p class="text-center pt-3"><em>How can we help you ?</em></p>
+        </div>
+    </div>
+    <!-- conctact form -->
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-10 mx-auto">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form}}
+                <div class="form-group">
+                    <button type="submit" class="btn btn-block btn-success mt-3">Send <i
+                            class="fas fa-paper-plane"></i></button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock services %}

@@ -14,6 +14,8 @@ from config.utils import (
     upload_image_path_products
 
     )
+from ckeditor_uploader.fields import RichTextUploadingField
+
 
 class Category(models.Model):
     title = models.CharField(max_length=2000)
@@ -58,13 +60,15 @@ class Category(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(blank=True, unique=True)
-    description = models.TextField()
+    description = RichTextUploadingField()
     # price       = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
     image = models.ImageField(
         upload_to=upload_image_path_products, null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     featured = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now_add=True)
+
+    objects = models.Manager()
 
     def __str__(self):
         return self.title

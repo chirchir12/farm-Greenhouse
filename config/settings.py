@@ -31,13 +31,49 @@ INSTALLED_APPS = [
     'users',
     'pages',
     'products',
-    'news'
+    'news',
+    'search',
+    'ckeditor',
+    'ckeditor_uploader'
 ]
 
 
 #custom params
 
 AUTH_USER_MODEL = 'users.User'
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+CKEDITOR_UPLOAD_PATH = os.path.join(BASE_DIR, 'static_cdn', 'media-root', 'ckeditor')
+CKEDITOR_IMAGE_BACKEND = "pillow"
+ 
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         'toolbar': 'None',
+#         'enterMode': 1,
+#     },
+# }
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
+    }
+}
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         'toolbar': 'Basic',
+#         'enterMode': 2,
+#     },
+#     'awesome_ckeditor':{
+#         'toolbar': 'Custom',
+#         'toolbar_Custom': [
+#             [ 'Bold','Italic','Underline','Strike','-','Link','Unlink','Anchor','-', 'Styles','Format','Font','FontSize','-', 'Image' ]
+#         ]
+#     },
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
