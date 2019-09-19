@@ -9,6 +9,7 @@ urlpatterns = [
     path('news/', include('news.urls')),
     path('products/search', include('search.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    # path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
 ]
 
