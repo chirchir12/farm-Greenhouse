@@ -14,17 +14,17 @@ body{
 
 .logo-contact{
     width: 100%;
-    min-height: 7em;
     background-image: linear-gradient(#f5f5f5,#e0e0e0);
    
 
 }
 .contact-header ul{
     list-style: none;
+    padding:0;
 }
 
 .contact-header li{
-    font-size: 1.1rem;
+    font-size: .9rem;
     font-weight: 400;
     color:#05962e;
 }
@@ -34,7 +34,8 @@ body{
     
 }
 .fintouch-navbar li{
-    font-size:1.2rem;
+    font-size:.9rem;
+    padding:0;
     font-weight: 600;
    
 }
@@ -81,16 +82,15 @@ body{
     background-image: linear-gradient(#f5f5f5,#e0e0e0);
 }
     #brief-about .about-title{
-        text-align: center;
-        font-size:2.1rem;
+        font-size:1.6rem;
     }
     #brief-about .about-title span{
         color:#05962e;
     }
     #brief-about .about-content{
-        font-size:18px;
-        line-height: 200%;
-        padding:2px 20px;
+        font-size:15px;
+        line-height: 190%;
+       
     
     }
    
@@ -99,11 +99,14 @@ body{
         font-weight: 500;
         color:#05962e;
     }
+    .read-more.btn{
+        padding:0;
+    }
 
 /*********************************************************************************** */
 /* services and product section */
 #main-services{
-    background-image:linear-gradient( rgb(20, 20, 20, .8), rgb(20, 20, 20, .7)), url('/static/images/try.jpg'); 
+    /* background-image:linear-gradient( rgb(20, 20, 20, .8), rgb(20, 20, 20, .7)), url('/static/images/try.jpg');  */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -120,8 +123,9 @@ body{
         color:white;
 
     }
-    .row.title-row .services-title span{
+    .row.title-row .services-title{
         color: #05962e;
+        font-size:1.6rem;
 
     }
     .card.category-card-style{
@@ -133,21 +137,24 @@ body{
     }
     .category-card-style .card-title{
         
-        background-color: #05962e;
-        padding:15px 15px;
-        border-radius: 20px;
-        font-size: 16px;
+        color:#05962e;
+        padding:7px 10px;
+        border-radius: 16px;
+        font-size: 15px;
         font-weight: 600;
+        
        
         text-align: center;
     }
     .category-card-style .card-title a{
-        color:white;
+        color:#05962e;
         text-decoration: none;
     }
     .category-card-style .card-title a:hover, .category-card-style .card-title:hover{
         background-color: #043512;
         font-weight: 400;
+        color:#fff;
+        transition: 1ms;
         text-decoration: none;
     }
     
@@ -276,7 +283,7 @@ body{
 /*********************************************************************************** */
 /* about page */
 .about-page-container h1.about-page-title{
-    font-size:2rem;
+    font-size:1.6rem;
     color:#05962e;
 }
     .about-page-container .underliner{
@@ -284,18 +291,19 @@ body{
         height: 2px;
         background-color: #05962e;
         display:block;
-        margin: auto
+        margin-left: 10px;
+    
        
 
     }
     .about-page-container .about-page-content, .about-page-container .core-values-wrapper{
         line-height: 170%;
         word-spacing: 2px;
-        padding: 2px 20px;
+       
     }
-    .about-page-container .about-content-wrapper>p:first-child, .about-page-container .core-values-wrapper >p:first-child {
-        padding-top:15px;
-    }
+    /* .about-page-container .about-content-wrapper>p:first-child, .about-page-container .core-values-wrapper >p:first-child {
+        
+    } */
 
     .about-page-container h2.about-page-title{
         font-size:1.6rem;
@@ -306,8 +314,7 @@ body{
         color:#05962e;
     }
     .about-page-container .core-values-wrapper h3+p.core-values-content{
-        padding-right:20px;
-        padding-left:20px;
+        
     }
 
 /*********************************************************************************** */

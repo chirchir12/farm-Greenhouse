@@ -22,7 +22,7 @@ class ProductDetailView(FormMixin, DetailView):
 
         context = super(ProductDetailView, self).get_context_data(
             *args, **kwargs)
-        category = Category.objects.all()
+        category = Category.objects.all().order_by('-timestamp')
         context['categories'] = category
         context['form'] = ContactForm
         return context

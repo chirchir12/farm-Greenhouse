@@ -5,7 +5,7 @@ from products.models import Category
 
 
 class POSTListView(ListView):
-    model = Post
+    queryset = Post.objects.all().order_by('-created')
     template_name = "posts/list.html"
 
     

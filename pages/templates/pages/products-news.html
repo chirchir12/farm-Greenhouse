@@ -1,8 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'base_service.html' %}
 {% load static %}
 
 
-{% block content %}
+{% block service_products %}
+
+     
 <section id="product-list-section">
     <div class="row">
         <!-- left navigation -->
@@ -99,13 +101,10 @@
                 </div>
             </div>
             <div class="row product-container">
-                {% block services %}
 
-                {% endblock services %}
+                {% block product_news %}
 
-                {% block service_products %}
-
-                {% endblock  %}
+                {% endblock product_news  %}
             </div>
             <div class="row mt-3">
                 <div class="col-12 col-8 max-auto">
@@ -123,4 +122,4 @@
     </div>
 </section>
 
-{% endblock content %}
+{% endblock service_products %}

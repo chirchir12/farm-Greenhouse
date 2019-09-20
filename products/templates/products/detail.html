@@ -1,21 +1,33 @@
-{% extends 'pages/services-base.html' %}
+{% extends 'pages/products-news.html' %}
 
-{% block services %}
+{% block product_news %}
 
 
 <div class="card mb-3 ml-3 mt-3 product-detail-card">
     <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="{{object.image.url}}" class="card-img" alt="{{object.title}}">
+      <div class="col-md-6">
+        <img src="{{object.image.url}}" class="card-img img-fluid" alt="{{object.title}}">
       </div>
-      <div class="col-md-8">
+      <div class="col-md-6">
         <div class="card-body">
-          <h5 class="card-title text-center">{{object.title}}</h5>
-          <p class="card-text">{{object.description}}</p>
+          <h5 class="card-title ">{{object.title}}</h5>
+          <div class="card-text">
+              {% include 'products/snippets/product-attributes.html' with object=object %}
+          </div>
          
         </div>
       </div>
     </div>
+
+    <div class="row  mb-3">
+      <div class="col-12">
+        <div class="card-body mx-2">
+          <p>{{object.description|safe|linebreaks}}</p>
+        </div>
+
+      </div>
+    </div>
+
     <div class="row mt-3 mb-4">
       <div class="col-10 mx-auto">
           <div class="card">
@@ -32,8 +44,9 @@
       </div>
       </div>
     </div>
+
   </div>
 
 
 
-{% endblock services %}
+  {% endblock product_news  %}
