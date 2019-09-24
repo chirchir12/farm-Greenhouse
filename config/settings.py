@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'news',
     'search',
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
+    'careers'
 ]
 
 

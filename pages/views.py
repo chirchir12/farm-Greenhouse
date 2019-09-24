@@ -82,5 +82,5 @@ class CategoryDetailView(DetailView):
     def get_object(self, *args, **kwargs):
         slug = self.kwargs.get('slug')
         instance = get_object_or_404(Category, slug=slug)
-        products = instance.product_set.all().order_by('-timestamp')
+        products = instance.product_set.all().order_by('timestamp')
         return products

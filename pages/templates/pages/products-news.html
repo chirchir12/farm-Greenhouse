@@ -74,6 +74,8 @@
                                 About
                                 {% elif contact %}
                                 Contact
+                                {% elif careers %}
+                                Careers
                                 {% else %}
                                 Search
                                 {% endif %}
@@ -90,6 +92,8 @@
                                     {{''}}
                                 {% elif contact %}
                                     {{''}}
+                                {% elif careers %}
+                                    Send your applications
                                 {% else %}
                                     results for {{request.GET.q}}
                                 {% endif %}
