@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Career
+from .models import Career, JobDescription
 
 @admin.register(Career)
 class CareerAdmin(admin.ModelAdmin):
@@ -7,3 +7,5 @@ class CareerAdmin(admin.ModelAdmin):
     search_fields = ('fullname', 'phone', 'email', 'applying_for', 'education')
     list_filter = ('uploaded_at', )
     ordering = ('uploaded_at',)
+
+

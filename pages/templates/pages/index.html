@@ -15,7 +15,7 @@
         <div class="col-12 col-md-4">
             <img src="{% static 'images/cor.png' %}" alt="" class="img-fluid d-none d-lg-block pl-3">
         </div>
-        <div class="col-12 col-lg-8 ">
+        <div class="col-12 col-lg-8 px-4 ">
                 <h1 class="about-title">  <span> Welcome to Finetouch</span></h1>
 
             <p class="about-content text-justify pr-4">
@@ -49,9 +49,9 @@
             <h1 class="services-title">Our Products </h1>
         </div>
     </div>
-    <div class="row pb-5 no-gutters">
+    <div class="row pb-5 p-3">
         {% for category in object_list %}
-        <div class=" col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 padding-column">
+        <div class=" col-12 col-xs-6 col-sm-6 col-md-6 col-lg-3 padding-column">
             {% include 'pages/snippets/category-card.html' with category=category %}
 
         </div>
