@@ -1,0 +1,17 @@
+{% extends 'pages/products-news.html' %}
+
+{% block product_news %}
+
+<div class="col-12 col-md-8 mx-auto">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <div class="form-group">
+            <button type="submit" class="btn btn-block btn-success mt-3">Send <i
+                    class="fas fa-paper-plane"></i></button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock product_news  %}

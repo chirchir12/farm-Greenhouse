@@ -1,8 +1,8 @@
 <div class="card mb-3 post-detail-card">
     <img src="{{post.image.url}}" class="card-img-top img-fluid" alt="{{post.title}}" style="max-height: 400px;">
     <div class="card-body">
-        <h5 class="card-title text-center">{{post.title|title}} </h5>
-        <p class="card-text text-center"><small class="text-muted">{{post.created|date}}</small></p>
+        <h5 class="card-title text-center ">{{post.title|title}} </h5>
+        <p class="card-text text-center"><small class="text-muted">Published on {{post.created}}</small></p>
         <div class="card-text card-content">{{post.content|safe|linebreaksbr}}</div>
     </div>
 </div>

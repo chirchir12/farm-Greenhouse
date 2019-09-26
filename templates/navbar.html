@@ -3,6 +3,8 @@
 {% url 'posts' as posts_url %}
 {% url 'about' as about_url %}
 {% url 'contact' as contact_url %}
+{% url 'careers' as careers_url %}
+
 
 {% load static %}
 <nav class="navbar navbar-expand-md fintouch-navbar sticky-top">
@@ -51,6 +53,9 @@
             </li>
             <li class="nav-item {% if request.path == posts_url %} active {% endif %}">
                 <a class="nav-link" href="{{posts_url}}">News</a>
+            </li>
+            <li class="nav-item {% if request.path == careers_url %} active {% endif %}">
+                <a class="nav-link" href="{{careers_url}}">Careers</a>
             </li>
         </ul>
     </div>

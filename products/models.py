@@ -21,7 +21,7 @@ class Category(models.Model):
     title = models.CharField(max_length=2000)
     slug  = models.SlugField(blank=True, null=True, unique=True)
     image = models.ImageField(upload_to=upload_image_to_category, null=True, blank=True)
-    description = models.CharField(max_length=150, default='content')
+    description = models.TextField(max_length=300, default='content')
 
     objects = models.Manager()
 
@@ -59,6 +59,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     title = models.CharField(max_length=100)
+    type   = models.CharField(max_length=40, blank=True, null=True, help_text="type of the product")
     slug = models.SlugField(blank=True, unique=True)
     manufacturer = models.CharField(max_length=100, blank=True, null=True, help_text="manufactorer, eg. Tiger")
     power = models.CharField(max_length=40, blank=True, null=True, help_text="horse power")
@@ -96,7 +97,7 @@ class Product(models.Model):
     description = RichTextUploadingField()
     # price       = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
     image = models.ImageField(
-        upload_to=upload_image_path_products, null=True, blank=True)
+        upload_to=upload_image_path_products)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     featured = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now_add=True)

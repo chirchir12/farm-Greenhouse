@@ -74,6 +74,8 @@
                                 About
                                 {% elif contact %}
                                 Contact
+                                {% elif careers %}
+                                Careers
                                 {% else %}
                                 Search
                                 {% endif %}
@@ -90,6 +92,8 @@
                                     {{''}}
                                 {% elif contact %}
                                     {{''}}
+                                {% elif careers %}
+                                    Send your applications
                                 {% else %}
                                     results for {{request.GET.q}}
                                 {% endif %}
@@ -100,14 +104,20 @@
 
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12 col-md-11 mx-auto">
+                    <!-- <p>{{category_instance.description}}</p> -->
+                </div>
+            </div>
             <div class="row product-container">
+                
 
                 {% block product_news %}
 
                 {% endblock product_news  %}
             </div>
             <div class="row mt-3">
-                <div class="col-12 col-8 max-auto">
+                <div class="col-12 col-md-8 max-auto">
                     
                     {% if is_paginated %}
                     {% include 'search/snippets/pagination.html' %}
