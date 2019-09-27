@@ -122,10 +122,15 @@ if config('DEV'):
     }
 else:
     DATABASES = {
-        'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config('NAME'),
+        'USER': config('USER'),
+       'PASSWORD': config('DB_PASSWORD'),
+         'HOST': config('HOST'),
+        'PORT':''
     }
+}
 
 # DATABASES = {
 #     'default': {
