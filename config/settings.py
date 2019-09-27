@@ -15,7 +15,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
@@ -113,7 +113,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-if config('DEV'):
+print(config('MODE'))
+if config('MODE')=='dev':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -126,25 +127,13 @@ else:
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': config('NAME'),
         'USER': config('USER'),
-       'PASSWORD': config('DB_PASSWORD'),
-         'HOST': config('HOST'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('HOST'),
         'PORT':''
     }
-}
+    }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': config('NAME'),
-#         'USER': config('USER'),
-#        'PASSWORD': config('DB_PASSWORD'),
-#          'HOST': config('HOST'),
-#         'PORT':''
-#     }
-# }
 
-# Password validation
-# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -184,9 +173,14 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "staticfiles"),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'static-root')
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'static_cdn', 'media-root')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+if config('MODE')=='dev':
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'static-root')
+    MEDIA_ROOT =  os.path.join(BASE_DIR, 'static_cdn', 'media-root')
+
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
