@@ -40,8 +40,9 @@ class Category(models.Model):
 
 class Product(models.Model):
     title = models.CharField(max_length=100)
-    type   = models.CharField(max_length=40, blank=True, null=True, help_text="type of the product")
     slug = models.SlugField(blank=True, unique=True)
+    type   = models.CharField(max_length=40, blank=True, null=True, help_text="type of the product")
+    code = models.CharField(max_length=40, blank=True, null=True, help_text="rgs-py30")
     manufacturer = models.CharField(max_length=100, blank=True, null=True, help_text="manufactorer, eg. Tiger")
     power = models.CharField(max_length=40, blank=True, null=True, help_text="horse power")
     model = models.CharField(max_length=100, null=True, blank=True, help_text="model type (for generators)")
