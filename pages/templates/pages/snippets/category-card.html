@@ -1,5 +1,5 @@
 <div class="card category-card-style">
-    <img src="{{category.image.url}}" class="card-img-top pt-1 pl-1 pr-1" alt="...">
+    <img src="{{category.image.url}}" class="card-img-top img-fluid pt-1 pl-1 pr-1" alt="...">
     <div class="card-body">
         <h5 class="card-title"><a href="{{category.get_absolute_url}}">{{category.title}}</a></h5>
         <p class="card-text">{{category.description|safe|truncatechars:70}}</p>
