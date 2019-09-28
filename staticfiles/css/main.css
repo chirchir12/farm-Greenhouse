@@ -125,7 +125,12 @@ body{
         background-image:linear-gradient( rgb(245, 245, 245, .1), rgb(224, 224, 224, .1));
         display: block;
         margin: auto;
+        
 
+    }
+    .card.category-card-style .card-img-top{
+        max-height:200px;
+        min-height:200px;
     }
     .category-card-style .card-title{
         
