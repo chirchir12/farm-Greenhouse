@@ -3,6 +3,10 @@
     {% if object.manufacturer %}
     <p> <b>manufacturer:</b>  {{object.manufacturer}}</p>   
     {% endif %}
+
+    {% if object.code %}
+    <p> <b>code:</b>  {{object.code}}</p>   
+    {% endif %}
     
     
     {% if object.model %}
@@ -25,11 +29,11 @@
     
     
     {% if object.inlet %}
-        <p><b>Outlet and Inlet:</b> {{object.inlet}}</p>
+        <p><b>Inlet:</b> {{object.inlet}}</p>
     {% endif %}
 
     {% if object.outlet %}
-        <p><b>Outlet and Inlet:</b> {{object.outlet}}</p>
+        <p><b>Outlet:</b> {{object.outlet}}</p>
     {% endif %}
 
     {% if object.flow_rate %}
