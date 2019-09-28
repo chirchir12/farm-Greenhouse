@@ -125,12 +125,21 @@ body{
         background-image:linear-gradient( rgb(245, 245, 245, .1), rgb(224, 224, 224, .1));
         display: block;
         margin: auto;
+        min-height: 379px;
+        max-height: 379px;
         
 
     }
     .card.category-card-style .card-img-top{
         max-height:200px;
         min-height:200px;
+    }
+    .card.category-card-style .card-body{
+        padding-top:5px;
+    }
+
+    .card.category-card-style p.card-text{
+        font-size: 0.8rem;
     }
     .category-card-style .card-title{
         
@@ -451,5 +460,4 @@ border: 1px solid #05962e;
     }
     .fb-page{
         margin-left: 10px;
-    }
-}
+    }}
