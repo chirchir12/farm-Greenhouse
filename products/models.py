@@ -94,7 +94,7 @@ class Product(models.Model):
     dimension = models.CharField(max_length=40, blank=True, null=True, help_text="eg 11'W x 21.22'L x 1.5'D")
 
     
-    description = RichTextUploadingField()
+    description = RichTextUploadingField( null=True, blank=True)
     # price       = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
     image = models.ImageField(
         upload_to=upload_image_path_products)
