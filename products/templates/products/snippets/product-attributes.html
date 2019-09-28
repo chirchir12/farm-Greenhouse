@@ -24,9 +24,19 @@
     {% endif %}
     
     
-    {% if object.outlet_inlet %}
-        <p><b>Outlet and Inlet:</b> {{object.outlet_inlet}}</p>
+    {% if object.inlet %}
+        <p><b>Outlet and Inlet:</b> {{object.inlet}}</p>
     {% endif %}
+
+    {% if object.outlet %}
+        <p><b>Outlet and Inlet:</b> {{object.outlet}}</p>
+    {% endif %}
+
+    {% if object.flow_rate %}
+        <p><b>Outlet and Inlet:</b> {{object.flow_rate}}</p>
+    {% endif %}
+
+
 
     
     {% if object.automatic_or_manual %}
