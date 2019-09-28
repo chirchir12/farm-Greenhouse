@@ -36,25 +36,6 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse('products', kwargs={'slug': self.slug})
 
-    def save(self):
-
-        # Opening the uploaded image
-        im = Image.open(self.image)
-
-        output = BytesIO()
-
-        # Resize/modify the image
-        im = im.resize((150, 100))
-
-        # after modifications, save it to the output
-        im.save(output, format='PNG', quality=100)
-        output.seek(0)
-
-        # change the imagefield value to be the newley modifed image value
-        self.image = InMemoryUploadedFile(output, 'ImageField', "%s.png" % self.image.name.split(
-            '.')[0], 'image/png', sys.getsizeof(output), None)
-
-        super(Category, self).save()
 
 
 class Product(models.Model):
