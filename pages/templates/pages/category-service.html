@@ -1,19 +1,35 @@
 {% extends 'pages/products-news.html' %}
 
+
 {% block product_news %}
+<div class="row no-gutters">
+    {% for product in products %}
+    {% url 'product-detail' slug=product.slug  as product_list_url%}
 
-{% for product in products %}
-    <div class="col-12 col-sm-6 col-md-6 col-lg-3 p-3">
-        <div class="card product-card-style ">
-            <img src="{{product.image.url}}" class="card-img-top pt-1 pl-1 pr-1" alt="...">
-            <div class="card-body">
-                <h5 class="card-title text-center"><a href="{% url 'product-detail' slug=product.slug %}">{{product.title|title|truncatewords:3}}</a></h5>
-                <p class="card-text">{{product.description|safe|truncatechars:60}}</p>
+        <div  class="col-12 col-sm-6 col-md-6 col-lg-3 p-1 padding-products-list ">
+            <div class="card product-card-style " onclick="location.href='{{product_list_url}}'">
+                <img src="{{product.image.url}}" class="card-img-top img-fluid p-2" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">
+                        <a href="{{product_list_url}}">{{product.title|title|truncatewords:3}}
+
+                        </a>
+                    </h5>
+                    
+                    {% if product.description %}
+                    <p class="card-text">{{product.description|safe|truncatechars:80}}</p>
+                    {% else %}
+                    {% include 'pages/snippets/product-attributes.html' with product=product %}
+                    {% endif %}
+                        
+                    
+                </div>
             </div>
-        </div>
-    </div>
 
-{% endfor %}
+        </div>
+
+    {% endfor %}
+</div>
 
 
 {% endblock product_news  %}

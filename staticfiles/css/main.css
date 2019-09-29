@@ -202,9 +202,10 @@ body{
     .product-list-nav a{
         color:#757575;
     }
-    .product-card-style{
-        min-height: 293px;
-        
+    .card.product-card-style {
+        min-height: 360px;
+        max-height: 360px;
+       
     }
     .product-card-style h5{
         font-size: 14px;
@@ -217,6 +218,33 @@ body{
     .product-card-style h5 a:hover{
         color:#043512;
         text-decoration: none;
+    }
+
+    .product-card-style .card-img-top{
+        max-height: 193px;
+        min-height: 193px;
+    }
+    .padding-products-list{
+        padding-right:2px;
+        padding-left:2px;
+        
+    } 
+    .card.product-card-style:hover{
+        cursor: pointer;
+        border:1px solid #05962e;
+        padding:2px;
+        
+        
+    } 
+    .card.product-card-style p.card-text{
+        font-size:0.9rem;
+    }
+    .clickable-card{
+        display: block;
+        cursor: pointer;
+    }
+    .clickable-card:hover{
+        border:1px solid #05962e;
     }
    
 /*********************************************************************************** */
@@ -239,6 +267,10 @@ body{
     font-size: 24px;
     font-weight: 500;
 
+}
+.card-body.product-detail-section{
+    padding-top:0;
+    padding-bottom:0;
 }
 /*********************************************************************************** */
 /* post list */
