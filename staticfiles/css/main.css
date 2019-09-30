@@ -241,6 +241,9 @@ body{
     .card.product-card-style p.card-text{
         font-size:0.8rem;
     }
+    .card.product-card-style .card-body{
+        padding:5px;
+    }
     .clickable-card{
         display: block;
         cursor: pointer;
