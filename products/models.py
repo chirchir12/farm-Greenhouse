@@ -30,6 +30,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Categories'
+        ordering = ['priority']
 
     
     def __str__(self):
