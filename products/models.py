@@ -60,6 +60,7 @@ class Product(models.Model):
     watts = models.CharField(max_length=100, blank=True, null=True, help_text="for solar panels, eg. 100W")
     frequency = models.CharField(max_length=100, blank=True, null=True, help_text="for booster pumps, eg 50hz, 2.37A, 0.5HP")
     size = models.CharField(max_length=40, blank=True, null=True, help_text="eg '1X1'")
+    rpm = models.CharField(max_length=40, blank=True, null=True, help_text="eg '2850rpm'")
     fuel_consumption = models.CharField(max_length=100, blank=True, null=True, help_text="eg 4.68ltrs/l")
     weight = models.CharField(max_length=40, blank=True, null=True, help_text="eg 180kgs")
     pressure = models.CharField(max_length=100, blank=True, null=True, help_text="eg 1.5 bar-10 bar")
