@@ -18,7 +18,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ['__str__']
+    list_display = ['__str__', 'priority']
     ordering = ('priority',)
 
     class Meta:
