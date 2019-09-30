@@ -11,6 +11,7 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ['title']
     list_display = ["__str__", "slug", 'category']
     list_filter = ('timestamp',)
+    ordering = ('-timestamp',)
 
     class Meta:
             model = Product
@@ -18,9 +19,11 @@ class ProductAdmin(admin.ModelAdmin):
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['__str__']
+    ordering = ('timestamp',)
 
     class Meta:
         model = Category
+        
 
 
 class ContactAdmin(admin.ModelAdmin):

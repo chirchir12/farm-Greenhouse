@@ -22,6 +22,7 @@ class Category(models.Model):
     slug  = models.SlugField(blank=True, null=True, unique=True)
     image = models.ImageField(upload_to=upload_image_to_category, null=True, blank=True)
     description = models.TextField(max_length=300, default='content')
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     objects = models.Manager()
 
