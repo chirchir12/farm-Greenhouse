@@ -225,6 +225,7 @@ body{
     .product-card-style .card-img-top{
         max-height: 193px;
         min-height: 193px;
+        min-width: 203px;
     }
     .padding-products-list{
         padding-right:2px;
