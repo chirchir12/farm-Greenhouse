@@ -412,9 +412,28 @@ body{
 .product-card-style.featured-products-card .card-img-top{
     min-width: 190px;
 }
+/*********************************************************************************** */
+    /*=-projects list=*/
 
+    .card.project-card-style:hover{
+        cursor: pointer;
+        border:1px solid #fff;
+        padding:2px;
 
+    }
+    .card.project-card-style .card-body{
+        padding:6px;
+    }
+    .card.project-card-style .card-text{
+        color:#05962e
+    }
 
+/*********************************************************************************** */
+    /*=-projects detail=*/
+    .card.project-detail-card-style .card-img-top{
+        max-height: 195px;
+        min-height: 195px;
+    }
 
 
 

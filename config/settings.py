@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'search',
     'ckeditor',
     'ckeditor_uploader',
-    'careers'
+    'careers',
+    'projects'
 ]
 
 

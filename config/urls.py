@@ -8,6 +8,7 @@ urlpatterns = [
     path('', include('products.urls')),
     path('news/', include('news.urls')),
      path('careers/', include('careers.urls')),
+     path('projects/', include('projects.urls')),
     path('products/search', include('search.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     # path('grappelli/', include('grappelli.urls')),
