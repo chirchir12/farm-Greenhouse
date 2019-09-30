@@ -17,7 +17,7 @@ class IdexView(ListView):
             *args, **kwargs)
         featuredProducts = Product.objects.filter(featured=True).order_by('-timestamp')[:6]
         print(featuredProducts)
-        categories = Category.objects.all()
+        categories = Category.objects.all().order_by('priority')
         context['featuredProducts'] = featuredProducts
         context['categories'] = categories
         return context
@@ -48,7 +48,7 @@ class ContactPageView(FormMixin, TemplateView):
 
         context = super(ContactPageView, self).get_context_data(
             *args, **kwargs)
-        categories = Category.objects.all()
+        categories = Category.objects.all().order_by('priority')
         context['categories'] = categories
         context['contact'] = True
         context['form'] = ContactForm
@@ -76,7 +76,7 @@ class CategoryDetailView(DetailView):
         slug = self.kwargs.get('slug')
         instance = get_object_or_404(Category, slug=slug)
         products = instance.product_set.all()
-        categories = Category.objects.all()
+        categories = Category.objects.all().order_by('priority')
         category_instance = get_object_or_404(Category, slug=slug)
         context['categories'] = categories
         context['products'] = products

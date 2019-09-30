@@ -23,6 +23,7 @@ class Category(models.Model):
     image = models.ImageField(upload_to=upload_image_to_category, null=True, blank=True)
     description = models.TextField(max_length=300, default='content')
     timestamp = models.DateTimeField(auto_now_add=True)
+    priority  = models.IntegerField(null=True, blank=True)
 
     objects = models.Manager()
 
