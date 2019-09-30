@@ -1,3 +1,4 @@
+{% url 'product-detail' slug=product.slug  as product_list_url%}
 <div class="card product-card-style featured-products-card " onclick="location.href='{{product_list_url}}'">
         <img src="{{product.image.url}}" class="card-img-top img-fluid p-2" alt="...">
         <div class="card-body">
