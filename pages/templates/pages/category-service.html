@@ -17,7 +17,7 @@
                     </h5>
                     
                     {% if product.description %}
-                    <p class="card-text">{{product.description|safe|truncatechars:80}}</p>
+                    <p class="card-text">{{product.description|safe|truncatechars:120}}</p>
                     {% else %}
                     {% include 'pages/snippets/product-attributes.html' with product=product %}
                     {% endif %}

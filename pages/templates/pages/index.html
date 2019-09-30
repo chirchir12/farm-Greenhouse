@@ -8,7 +8,7 @@
 <section id="brief-about">
     <div class="row pt-4 ">
         <div class="col-12">
-            
+
         </div>
     </div>
     <div class="row">
@@ -16,10 +16,10 @@
             <img src="{% static 'images/cor.png' %}" alt="" class="img-fluid d-none d-lg-block pl-3">
         </div>
         <div class="col-12 col-lg-8 px-4 ">
-                <h1 class="about-title">  <span> Welcome to Finetouch</span></h1>
+            <h1 class="about-title"> <span> Welcome to Finetouch</span></h1>
 
             <p class="about-content text-justify pr-4">
-                    
+
                 Finetouch Africa Ltd has been in operation since 2010 providing its clients with value added services
                 right from design, survey and construction of the relevant structures with customer focused business
                 model. Finetouch Africa Ltd has undoubtedly risen steadily over a short period of time to become one of
@@ -27,16 +27,16 @@
 
             </p>
             <p class="about-content text-justify pr-4">
-                    
-                    Finetouch Africa Ltd has been in operation since 2010 providing its clients with value added services
-                    right from design, survey and construction of the relevant structures with customer focused business
-                    model. Finetouch Africa Ltd has undoubtedly risen steadily over a short period of time to become one of
-                    the leading service providers in greenhouse and irrigation construction in Kenya...
-    
-                </p> 
-               <p><a href="{% url 'about' %}" class="btn read-more ">Read More...</a></p> 
 
-            
+                Finetouch Africa Ltd has been in operation since 2010 providing its clients with value added services
+                right from design, survey and construction of the relevant structures with customer focused business
+                model. Finetouch Africa Ltd has undoubtedly risen steadily over a short period of time to become one of
+                the leading service providers in greenhouse and irrigation construction in Kenya...
+
+            </p>
+            <p><a href="{% url 'about' %}" class="btn read-more ">Read More...</a></p>
+
+
         </div>
     </div>
 
@@ -61,6 +61,27 @@
 
 
 </section>
+
+
+{% if featuredProducts %}
+<section class="featured-products">
+    <div class="row title-row">
+        <div class="col-12 text-center">
+            <h1 class="services-title">Featured Products </h1>
+        </div>
+    </div>
+    <div class="row mb-4 no-gutters">
+        {% for product in featuredProducts %}
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2 p-1">
+            {% include 'pages/snippets/featured-products.html' with product=product %}
+        </div>
+        {% endfor %}
+
+    </div>
+</section>  
+{% endif %}
+    
+
 
 
 {% endblock %}

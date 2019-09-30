@@ -62,3 +62,8 @@ class ContactView(FormView):
     # form_class = ContactForm
     # success_url = reverse_lazy('product-detail')
     pass
+
+
+
+
+

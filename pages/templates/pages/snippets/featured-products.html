@@ -1,0 +1,18 @@
+<div class="card product-card-style featured-products-card " onclick="location.href='{{product_list_url}}'">
+        <img src="{{product.image.url}}" class="card-img-top img-fluid p-2" alt="...">
+        <div class="card-body">
+            <h5 class="card-title text-center">
+                <a href="{{product_list_url}}">{{product.title|title|truncatewords:3}}
+
+                </a>
+            </h5>
+            
+            {% if product.description %}
+            <p class="card-text">{{product.description|safe|truncatechars:100}}</p>
+            {% else %}
+            {% include 'pages/snippets/product-attributes.html' with product=product %}
+            {% endif %}
+                
+            
+        </div>
+    </div>

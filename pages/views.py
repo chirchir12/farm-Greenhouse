@@ -4,6 +4,7 @@ from products.models import Category
 from products.forms import ContactForm
 from django.views.generic.edit import FormMixin
 from django.urls import reverse_lazy
+from products.models import Product
 
 
 
@@ -14,7 +15,10 @@ class IdexView(ListView):
 
         context = super(IdexView, self).get_context_data(
             *args, **kwargs)
+        featuredProducts = Product.objects.filter(featured=True).order_by('-timestamp')[:6]
+        print(featuredProducts)
         categories = Category.objects.all()
+        context['featuredProducts'] = featuredProducts
         context['categories'] = categories
         return context
 
