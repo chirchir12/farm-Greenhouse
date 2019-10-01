@@ -9,3 +9,8 @@ class CareerAdmin(admin.ModelAdmin):
     ordering = ('uploaded_at',)
 
 
+@admin.register(JobDescription)
+class JobDescriptionAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created', 'display')
+
+

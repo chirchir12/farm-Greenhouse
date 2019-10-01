@@ -433,7 +433,7 @@ body{
         padding:6px;
     }
     .card.project-card-style .card-text{
-        color:#05962e
+        color:#05962e;
     }
 
 /*********************************************************************************** */
@@ -441,6 +441,26 @@ body{
     .card.project-detail-card-style .card-img-top{
         max-height: 195px;
         min-height: 195px;
+    }
+
+/*********************************************************************************** */
+    /*=career=*/
+    .job-title{
+        margin:0;
+        padding:0;
+    }
+    .job-title h4{
+        margin-bottom: 0;
+        padding:0;
+        font-size: 1rem;
+        color:#05962e;
+        padding-bottom: 5px;
+    }
+    .job-description p{
+        margin:0;
+        padding:0;
+        text-align: justify;
+        padding-right: 15px;
     }
 
 

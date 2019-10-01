@@ -116,10 +116,7 @@
             </div>
 
             {% if projectdes %}
-
-            
             <div class="row">
-
                 {% for desc in projectdes %}
                 {% if desc.description %}
                 <div class="col-11 ml-3">
@@ -129,11 +126,26 @@
                 {% endfor %}
 
             </div>
-          
-
-
-
             {% endif %}
+            
+            {% if jobs %}
+                <div class="row mb-3">
+                    
+                    {% for job in jobs %}
+                    <div class="col-12">
+                        <div class="job-title">
+                            <h4>{{job.title|title}}</h4>
+                        </div>
+                        <div class="job-description">
+                            <p >{{job.description|linebreaks}}</p>
+                        </div>
+                        </div>
+                    {% endfor %}
+                        
+                    
+                </div>
+            {% endif %}
+                
 
             <div class="row product-container w-100">
 

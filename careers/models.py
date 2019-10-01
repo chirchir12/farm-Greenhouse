@@ -7,6 +7,9 @@ from django.core.exceptions import ValidationError
 #         raise ValidationError('File format not Supported!!!!')
 
 
+
+
+
 class Career(models.Model):
 	
     fullname        = models.CharField(max_length=200)
@@ -26,6 +29,8 @@ class JobDescription(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
+    display = models.BooleanField(default=False)
+    objects = models.Manager()
 
 
     def __str__(self):
