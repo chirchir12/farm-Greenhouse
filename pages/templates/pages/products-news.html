@@ -117,17 +117,19 @@
 
             {% if projectdes %}
 
-            {% if desc.description %}
+            
             <div class="row">
 
                 {% for desc in projectdes %}
+                {% if desc.description %}
                 <div class="col-11 ml-3">
                     <p>{{desc.description}}</p>
                 </div>
+                {% endif %}
                 {% endfor %}
 
             </div>
-            {% endif %}
+          
 
 
 

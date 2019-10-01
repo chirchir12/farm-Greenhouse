@@ -20,6 +20,7 @@ class ProjectListView(ListView):
         context['project'] = True
         context['projects'] = projects
         context['projectdes'] = projectdes
+        print(projectdes)
         return context
 
 class ProjectDetailView(DetailView):

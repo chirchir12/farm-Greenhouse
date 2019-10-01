@@ -4,14 +4,17 @@ from config.utils import  unique_slug_generator
 from django.urls import reverse
 
 class ProjectDescription(models.Model):
-    title       = models.CharField(max_length=200)
+    title       = models.CharField(max_length=200, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     updated     = models.DateTimeField(auto_now_add=True)
 
     objects = models.Manager()
 
     def __str__(self):
-        return self.title
+        if self.title:
+            return self.title
+        else:
+            return 'description was edited'
 
 
 
