@@ -4,7 +4,7 @@
 
 {% block service_products %}
 
-     
+
 <section id="product-list-section">
     <div class="row">
         <!-- left navigation -->
@@ -23,7 +23,8 @@
                 <div class="col-12">
                     <form class="input-group md-form form-sm form-2 pl-0" method="GET" action="{% url 'search' %}">
                         <input class="form-control my-0 py-1 red-green" name="q" type="search"
-                            placeholder="Search product" value="{% if request.GET.q %}{{request.GET.q}} {% endif %}" aria-label="Search">
+                            placeholder="Search product" value="{% if request.GET.q %}{{request.GET.q}} {% endif %}"
+                            aria-label="Search">
                         <div class="input-group-append">
                             <button type="submit" class="input-group-text search-button-green"><i
                                     class="fas fa-search text-white" aria-hidden="true"></i></button>
@@ -91,15 +92,15 @@
                                 {% elif product.title %}
                                 {{product.title}}
                                 {% elif about %}
-                                    {{''}}
+                                {{''}}
                                 {% elif contact %}
-                                    {{''}}
+                                {{''}}
                                 {% elif careers %}
-                                    Send your applications
+                                Send your applications
                                 {% elif project %}
-                                Completed Projects
+                                {{''}}
                                 {% else %}
-                                    results for {{request.GET.q}}
+                                results for {{request.GET.q}}
                                 {% endif %}
 
                             </li>
@@ -113,8 +114,28 @@
                     <p>{{category_instance.description}}</p>
                 </div>
             </div>
+
+            {% if projectdes %}
+
+            {% if desc.description %}
+            <div class="row">
+
+                {% for desc in projectdes %}
+                <div class="col-11 ml-3">
+                    <p>{{desc.description}}</p>
+                </div>
+                {% endfor %}
+
+            </div>
+            {% endif %}
+
+
+
+            {% endif %}
+
             <div class="row product-container w-100">
-                
+
+
 
                 {% block product_news %}
 
@@ -122,12 +143,12 @@
             </div>
             <div class="row mt-3">
                 <div class="col-12 col-md-8 max-auto">
-                    
+
                     {% if is_paginated %}
                     {% include 'search/snippets/pagination.html' %}
-                        
+
                     {% endif %}
-                        
+
                 </div>
             </div>
         </div>

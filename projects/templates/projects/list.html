@@ -6,7 +6,7 @@
     {% for project in projects %}
     {% url 'project-detail' slug=project.slug  as project_list_url%}
 
-    <div class="col-11 col-md-6 col-lg-6 mx-auto  ">
+    <div class="col-11 col-md-6 col-lg-6 display-in-small-device ">
 
         <div class="card project-card-style " onclick="location.href='{{project_list_url}}'">
             <img class="card-img-top" src="{{project.main_project_image.url}}" alt="Card image cap">

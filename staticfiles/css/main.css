@@ -414,12 +414,20 @@ body{
 }
 /*********************************************************************************** */
     /*=-projects list=*/
-
+    .card.project-card-style{
+        max-height: 312px;
+        min-height: 312px;
+        margin-bottom: 8px;
+    }
     .card.project-card-style:hover{
         cursor: pointer;
         border:1px solid #fff;
         padding:2px;
 
+    }
+    .card.project-card-style .card-img-top{
+        max-height: 274px;
+        min-height: 274px;
     }
     .card.project-card-style .card-body{
         padding:6px;
@@ -556,4 +564,18 @@ border: 1px solid #05962e;
     }
     .fb-page{
         margin-left: 10px;
-    }}
+    }
+
+    .card, .display-in-small-device, .project-detail-card-style{
+        display: block;
+        margin:auto
+    }
+    .product-container{
+        display:block;
+        margin:auto;
+    }
+
+
+}
+
+    

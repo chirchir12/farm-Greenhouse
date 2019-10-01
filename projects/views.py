@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, View, DetailView, TemplateView
-from .models import Project
+from .models import Project, ProjectDescription
 from products.models import Category
 from django.shortcuts import get_object_or_404
 
@@ -13,11 +13,13 @@ class ProjectListView(ListView):
 
         context = super(ProjectListView, self).get_context_data(
             *args, **kwargs)
+        projectdes = ProjectDescription.objects.all().order_by('updated')[:1]
         projects = Project.objects.all()
         categories = Category.objects.all().order_by('priority')
         context['categories'] = categories
         context['project'] = True
         context['projects'] = projects
+        context['projectdes'] = projectdes
         return context
 
 class ProjectDetailView(DetailView):
