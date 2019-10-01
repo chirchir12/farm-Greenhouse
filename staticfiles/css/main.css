@@ -417,7 +417,7 @@ body{
     .card.project-card-style{
         max-height: 312px;
         min-height: 312px;
-        margin-bottom: 8px;
+        margin-bottom: 1.2rem;
     }
     .card.project-card-style:hover{
         cursor: pointer;
