@@ -7,8 +7,10 @@
     {% url 'product-detail' slug=product.slug  as product_list_url%}
 
         <div  class="col-12 col-sm-6 col-md-6 col-lg-3 p-1 padding-products-list ">
-            <div class="card product-card-style " onclick="location.href='{{product_list_url}}'">
-                <img src="{{product.image.url}}" class="card-img-top img-fluid p-2" alt="...">
+            <div class="card clickable-div category-list h-100 " onclick="location.href='{{product_list_url}}'">
+                    <div class="embed-responsive embed-responsive-4by3">
+                <img src="{{product.image.url}}" class="card-img-top img-fluid embed-responsive-item p-2" alt="...">
+                    </div>
                 <div class="card-body">
                     <h5 class="card-title text-center">
                         <a href="{{product_list_url}}">{{product.title|title|truncatewords:3}}
