@@ -351,9 +351,9 @@ body{
     .card.project-card-style .card-text{
         color:#05962e;
     }
-    .card .embed-responsive{
+    /* .card .embed-responsive{
         padding-bottom: 25%;
-    }
+    } */
 
 /*********************************************************************************** */
     /*=-projects detail=*/
