@@ -17,7 +17,7 @@ body{
 } */
 
 .embed-responsive .card-img-top {
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .active a{
