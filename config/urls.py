@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-
+from . import views
 urlpatterns = [
     path('', include('pages.urls')),
     path('', include('products.urls')),
@@ -14,6 +14,8 @@ urlpatterns = [
     # path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
 ]
+
+handler500 = views.handler500
 
 
 if settings.DEBUG:

@@ -31,6 +31,7 @@ class JobDescription(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     display = models.BooleanField(default=False)
     objects = models.Manager()
+    remove = models.BooleanField(default=False)
 
 
     def __str__(self):
