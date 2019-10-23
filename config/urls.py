@@ -15,7 +15,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-handler500 = views.handler500
 
 
 if settings.DEBUG:
