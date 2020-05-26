@@ -23,22 +23,20 @@
             <li class="nav-item {% if request.path == home_url %} active {% endif %}">
                 <a class="nav-link" href="{{home_url}}">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item {% if request.path == about_url %} active {% endif %}">
-                <a class="nav-link" href="{{about_url}}">About</a>
-            </li>
+
             <li class="nav-item dropdown {% if request.path == category.get_absolute_url %} active {% endif %}">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    Services/Products
+                    Services
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    
+
                     {% for category in categories %}
                     <a class="dropdown-item" href="{{category.get_absolute_url}}">{{category.title}}</a>
-                        
+
                     {% endfor %}
-                        
-                   
+
+
                     <!-- <a class="dropdown-item" href="#">Greenhouses</a>
                     <a class="dropdown-item" href="#">Water Pumps</a>
                     <a class="dropdown-item" href="#">Agriculture Nets</a>
@@ -52,9 +50,7 @@
             <li class="nav-item {% if request.path == contact_url %} active {% endif %}">
                 <a class="nav-link" href="{{contact_url}}">Contact</a>
             </li>
-            <li class="nav-item {% if request.path == posts_url %} active {% endif %}">
-                <a class="nav-link" href="{{posts_url}}">News</a>
-            </li>
+
             <li class="nav-item {% if request.path == careers_url %} active {% endif %}">
                 <a class="nav-link" href="{{careers_url}}">Careers</a>
             </li>
